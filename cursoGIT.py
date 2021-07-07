@@ -1,7 +1,10 @@
 #check email address. primeras versiones
 
-#ahora corrijo el fallo para el correo mas simple, donde hay solo un punto, por tanto le saco el 1< al contador_punto: jara@gmail.com
-#pero da correcto para jara@@gmail.com, voy a probar subir el elif de cuenta_arroba al ppio del bloque de condicionales
+#de esta versión voy al siguiente archivo OKOK
+#corrijo el doble @
+#con el tipo jara.acosta@gmail.com.ar (aquí fallaría, porque hay 3 puntos, por tanto le digo a contador<4)
+#corrijo el doble punto ".."
+
 
 miemail=input("Introduzca su dirección de email: ")
 
@@ -17,7 +20,13 @@ for i in miemail:
 		contador_punto=contador_punto+1
 
 
-if contador_punto<3 and "@" in miemail and ".com" in miemail:   
+if cuenta_arroba>1:
+	print("email incorrecto")
+
+elif ".." in miemail:
+	print("mal")
+
+elif contador_punto<3 and "@" in miemail and ".com" in miemail:   
 		print("el email es correcto")
 
 elif contador_punto<3 and "@" in miemail and ".es" in miemail:
@@ -29,11 +38,8 @@ elif contador_punto<3 and "@" in miemail and ".org" in miemail:
 elif contador_punto<3 and "@" in miemail and ".eu" in miemail:
 		print("el email es correcto")
 
-elif contador_punto<4 and "@" in miemail and ".com.ar" in miemail: #jara.acosta@gmail.com.ar (aquí fallaría, porque hay 3 puntos, por tanto le digo a contador<4)
+elif contador_punto<4 and "@" in miemail and ".com.ar" in miemail: 
 		print("el email es correcto")
-
-elif cuenta_arroba>1:
-	print("email incorrecto")
 
 else:
 	print("email incorrecto")
