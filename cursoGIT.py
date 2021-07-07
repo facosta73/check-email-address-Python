@@ -1,6 +1,31 @@
 #check email address. primeras versiones
 
-#ejercicio para emails, por ahora el mejor al 21/06/21. Falla para facosta73@gmail..com
+# AHORA ESTE ES EL MEJOR 21/06/21 A LAS 17:35
+
+# Primero hago un INPUT para que pida un email, luego hago dos BUCLES con CONTADORES para chequear cada caracter del email y contabilice arrobas y puntos.
+#Y luego CONDICIONALES para que cumpla o prohiba diferentes situaciones
+
+#corrijo el doble @
+
+#con el tipo jara.acosta@gmail.com.ar (aquí fallaría, porque hay 3 puntos, por tanto le digo a contador_punto<4)
+
+#corrijo el doble punto ".."
+
+# direcciones email a probar:
+# jara@gmail.com
+# jara.acosta@gmail.com
+# jara.gmail.com
+# jara@acosta@gmail.com (aquí en el anterior código mas aceptable, me contaba 3 caracteres y lo daba por bueno)
+# jara.acosta@gmailcom (in punto antes del com)
+# jara..acosta@gmail.com
+# jara.acosta@gmail..com
+# jara@acosta@gmail.com
+# jara.acosta@@gmail.com
+# jara_acosta@gmail.com
+# jara__acosta@gmail.com
+# jara-acosta@gmail.com
+# jara--acosta@gmail.com
+# jara acosta@gmail.com
 
 
 miemail=input("Introduzca su dirección de email: ")
@@ -16,20 +41,23 @@ for i in miemail:
 	if(i=="."):
 		contador_punto=contador_punto+1
 
-contador_doblepunto=0
-for d in miemail:
-	if(d==".."):
-		contador_doblepunto=contador_doblepunto+1
-
-
 
 if cuenta_arroba>1:
-	print("email incorrecto")
+	print("email incorrecto, no puede usar dos @")
 
-elif contador_doblepunto>0:
-	print("email incorrecto")
+elif ".." in miemail:
+	print("email incorrecto, no use doble punto")
 
-elif contador_punto<3 and "@" in miemail and ".com" in miemail:   #podría probar poniendo un elif tipo elif "..com" in miemail print "incorrecto"
+elif " " in miemail:
+	print("email incorrecto, no use espacios")	
+
+elif "__" in miemail:
+	print("email incorrecto, no use doble guion")
+
+elif "--" in miemail:
+	print("email incorrecto, no use doble guion")
+
+elif contador_punto<3 and "@" in miemail and ".com" in miemail:   
 		print("el email es correcto")
 
 elif contador_punto<3 and "@" in miemail and ".es" in miemail:
