@@ -1,6 +1,6 @@
-#check email address. primeras versiones
+# Primeros ejercicios en Python: check email address. primeras versiones
 
-# AHORA ESTE ES EL MEJOR 21/06/21 A LAS 17:35
+
 
 # Primero hago un INPUT para que pida un email, luego hago dos BUCLES con CONTADORES para chequear cada caracter del email y contabilice arrobas y puntos.
 #Y luego CONDICIONALES para que cumpla o prohiba diferentes situaciones
